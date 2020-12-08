@@ -1,0 +1,29 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace D:\src\jenkins-plugin-test\skenai-plugin\work\workspace\cli-test
+Executing skencli command: pip install --upgrade skencli 
+Requirement already up-to-date: skencli in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (0.1.86)
+Requirement already satisfied, skipping upgrade: PyYAML>=5.1.2 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from skencli) (5.3.1)
+Requirement already satisfied, skipping upgrade: boto3>=1.10.26 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from skencli) (1.13.22)
+Requirement already satisfied, skipping upgrade: docker>=4.2.1 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from skencli) (4.2.1)
+Requirement already satisfied, skipping upgrade: requests>=2.7.0 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from skencli) (2.23.0)
+Requirement already satisfied, skipping upgrade: wget>=3.2 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from skencli) (3.2)
+Requirement already satisfied, skipping upgrade: s3transfer<0.4.0,>=0.3.0 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from boto3>=1.10.26->skencli) (0.3.3)
+Requirement already satisfied, skipping upgrade: botocore<1.17.0,>=1.16.22 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from boto3>=1.10.26->skencli) (1.16.22)
+Requirement already satisfied, skipping upgrade: jmespath<1.0.0,>=0.7.1 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from boto3>=1.10.26->skencli) (0.10.0)
+Requirement already satisfied, skipping upgrade: six>=1.4.0 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from docker>=4.2.1->skencli) (1.15.0)
+Requirement already satisfied, skipping upgrade: pypiwin32==223; sys_platform == "win32" and python_version >= "3.6" in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from docker>=4.2.1->skencli) (223)
+Requirement already satisfied, skipping upgrade: websocket-client>=0.32.0 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from docker>=4.2.1->skencli) (0.57.0)
+Requirement already satisfied, skipping upgrade: certifi>=2017.4.17 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from requests>=2.7.0->skencli) (2020.4.5.1)
+Requirement already satisfied, skipping upgrade: idna<3,>=2.5 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from requests>=2.7.0->skencli) (2.9)
+Requirement already satisfied, skipping upgrade: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from requests>=2.7.0->skencli) (1.25.9)
+Requirement already satisfied, skipping upgrade: chardet<4,>=3.0.2 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from requests>=2.7.0->skencli) (3.0.4)
+Requirement already satisfied, skipping upgrade: python-dateutil<3.0.0,>=2.1 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from botocore<1.17.0,>=1.16.22->boto3>=1.10.26->skencli) (2.8.1)
+Requirement already satisfied, skipping upgrade: docutils<0.16,>=0.10 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from botocore<1.17.0,>=1.16.22->boto3>=1.10.26->skencli) (0.15.2)
+Requirement already satisfied, skipping upgrade: pywin32>=223 in c:\users\alfian tan\appdata\local\programs\python\python38-32\lib\site-packages (from pypiwin32==223; sys_platform == "win32" and python_version >= "3.6"->docker>=4.2.1->skencli) (227)
+WARNING: You are using pip version 20.2.2; however, version 20.3.1 is available.
+You should consider upgrading via the 'c:\users\alfian tan\appdata\local\programs\python\python38-32\python.exe -m pip install --upgrade pip' command.
+Executing skencli command: skencli --org_id 5fb63d23-ebfd-40a9-972c-03d407af6102 --app_id 27438a4b-f745-460c-8f98-27e9c03f9298 
+No running docker client found, please ensure the docker client is running.
+(2, 'CreateFile', 'The system cannot find the file specified.')
+Finished: SUCCESS

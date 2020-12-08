@@ -1,0 +1,22 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <ai.sken.jenkins.plugins.SkenCLIBuilder plugin="skenai@1.0-SNAPSHOT">
+      <orgId>5fb63d23-ebfd-40a9-972c-03d407af6102</orgId>
+      <appId>27438a4b-f745-460c-8f98-27e9c03f9298</appId>
+    </ai.sken.jenkins.plugins.SkenCLIBuilder>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

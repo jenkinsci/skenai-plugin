@@ -1,0 +1,11 @@
+META-INF\annotations\org.jenkinsci.Symbol
+ai\sken\jenkins\plugins\Messages.class
+ai\sken\jenkins\plugins\SkenCLIBuilder.stapler
+ai\sken\jenkins\plugins\SkenCLIBuilder\DescriptorImpl\doCheckAppId.stapler
+ai\sken\jenkins\plugins\SkenCLIBuilder\DescriptorImpl\doCheckOrgId.stapler
+ai\sken\jenkins\plugins\SkenCLIBuilder$DescriptorImpl.class
+META-INF\annotations\hudson.Extension.txt
+ai\sken\jenkins\plugins\SkenCLIAction.class
+ai\sken\jenkins\plugins\SkenCLIBuilder.class
+META-INF\annotations\org.kohsuke.accmod.Restricted
+META-INF\annotations\hudson.Extension
