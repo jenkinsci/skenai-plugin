@@ -1,2 +1,0 @@
-# informational; use java -jar sezpoz.jar to see authoritative contents
-ai.sken.jenkins.plugins.SkenCLIBuilder$DescriptorImpl
