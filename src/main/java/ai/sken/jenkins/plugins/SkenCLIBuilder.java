@@ -116,6 +116,7 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 			env.put(entry.getKey(), entry.getValue());
 		}
 		Process p = null;
+		int exitValue = 0;
 		try {
 			p = pb.start();
 
@@ -138,16 +139,20 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 
 			br.close();
 			brErr.close();
+
+			System.out.println(p.exitValue());
+			exitValue  = p.exitValue();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
-			p.destroy();
+			if (p != null) {
+				p.destroy();
+			}
 		}
-		System.out.println(p.exitValue());
-		return p.exitValue();
+		return exitValue;
 	}
     
 }
