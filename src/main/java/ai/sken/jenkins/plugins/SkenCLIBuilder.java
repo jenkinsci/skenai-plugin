@@ -1,6 +1,7 @@
 package ai.sken.jenkins.plugins;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
@@ -16,6 +17,7 @@ import org.kohsuke.stapler.QueryParameter;
 import hudson.Extension;
 import hudson.FilePath;
 import hudson.Launcher;
+import hudson.Proc;
 import hudson.model.AbstractProject;
 import hudson.model.Run;
 import hudson.model.TaskListener;
@@ -44,7 +46,7 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 	}
 
 	@Override
-	public void perform(Run<?, ?> run, FilePath arg1, Launcher arg2, TaskListener listener)
+	public void perform(Run<?, ?> run, FilePath workDir, Launcher launcher, TaskListener listener)
 			throws InterruptedException, IOException {
 		run.addAction(new SkenCLIAction());
 		
@@ -52,11 +54,20 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 		// map.put("JAVA_HOME", "/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home");
 		// map.put("NODE_PATH", "/usr/local/lib/node_modules/");
 		// String script = "/Users/david/Documents/workspace/Cable/src/main/java/com/ericsson/iptv/testcase/test.sh";
-		String script = "skencli";
-		execute(listener, map, "pip", "install", "--upgrade", "skencli");
-		// execute(listener, map, script, "--org_id", "5fb63d23-ebfd-40a9-972c-03d407af6102", "--app_id", "27438a4b-f745-460c-8f98-27e9c03f9298");
-		execute(listener, map, script, "--org_id", orgId, "--app_id", appId);
+		//map.put("PATH", System.getenv().get("Path"));
+		execute(workDir, listener, map, "pip", "uninstall", "--yes", "skencli");
+		execute(workDir, listener, map, "pip", "install", "--user", "--upgrade", "skencli");
+		execute(workDir, listener, map, "skencli", "--version");
+		execute(workDir, listener, map, "skencli", "--org_id", orgId, "--app_id", appId);
 
+		//execute(workDir, listener, map, "~/.local/bin/skencli", "--version");
+		//execute(workDir, listener, map, "~/.local/bin/skencli", "--org_id", orgId, "--app_id", appId);
+
+		execute(workDir, listener, map, "/var/lib/jenkins/.local/bin/skencli", "--version");
+		execute(workDir, listener, map, "/var/lib/jenkins/.local/bin/skencli", "--org_id", orgId, "--app_id", appId);
+		
+		// Proc proc = launcher.launch("pip install --upgrade skencli", map, listener.getLogger(), workDir);
+		// proc.join();
 	}
 
     @Symbol("greet")
@@ -102,7 +113,9 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 	 *            arguments
 	 * @return 0 represent normal
 	 */
-	public static int execute(TaskListener listener, Map<String, String> map, String... arguments) {
+	public static int execute(FilePath workDir, TaskListener listener, Map<String, String> map, String... arguments) {
+		String workDirPath = workDir.getRemote().toString();
+		listener.getLogger().print("Working directory: " + workDirPath + "\n");
 		listener.getLogger().print("Executing skencli command: ");
 		for (String command : arguments) {
 			listener.getLogger().print(command);
@@ -111,6 +124,7 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 		listener.getLogger().println();
 
 		ProcessBuilder pb = new ProcessBuilder(arguments);
+		pb.directory(new File(workDirPath));
 		Map<String, String> env = pb.environment();
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			env.put(entry.getKey(), entry.getValue());
