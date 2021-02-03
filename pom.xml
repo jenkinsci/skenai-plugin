@@ -8,7 +8,7 @@
         <relativePath />
     </parent>
     <groupId>ai.sken.jenkins.plugins</groupId>
-    <artifactId>skenai-cli</artifactId>
+    <artifactId>skenai</artifactId>
     <version>${revision}${changelist}</version>
     <packaging>hpi</packaging>
     <properties>
