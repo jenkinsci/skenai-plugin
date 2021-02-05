@@ -17,7 +17,6 @@ import org.kohsuke.stapler.QueryParameter;
 import hudson.Extension;
 import hudson.FilePath;
 import hudson.Launcher;
-import hudson.Proc;
 import hudson.model.AbstractProject;
 import hudson.model.Run;
 import hudson.model.TaskListener;
@@ -48,29 +47,20 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 	@Override
 	public void perform(Run<?, ?> run, FilePath workDir, Launcher launcher, TaskListener listener)
 			throws InterruptedException, IOException {
-		run.addAction(new SkenCLIAction());
-		
+	
 		Map map = new HashMap();
-		// map.put("JAVA_HOME", "/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home");
-		// map.put("NODE_PATH", "/usr/local/lib/node_modules/");
-		// String script = "/Users/david/Documents/workspace/Cable/src/main/java/com/ericsson/iptv/testcase/test.sh";
-		//map.put("PATH", System.getenv().get("Path"));
 		execute(workDir, listener, map, "pip", "uninstall", "--yes", "skencli");
 		execute(workDir, listener, map, "pip", "install", "--user", "--upgrade", "skencli");
+
 		execute(workDir, listener, map, "skencli", "--version");
 		execute(workDir, listener, map, "skencli", "--org_id", orgId, "--app_id", appId);
-
-		//execute(workDir, listener, map, "~/.local/bin/skencli", "--version");
-		//execute(workDir, listener, map, "~/.local/bin/skencli", "--org_id", orgId, "--app_id", appId);
 
 		execute(workDir, listener, map, "/var/lib/jenkins/.local/bin/skencli", "--version");
 		execute(workDir, listener, map, "/var/lib/jenkins/.local/bin/skencli", "--org_id", orgId, "--app_id", appId);
 		
-		// Proc proc = launcher.launch("pip install --upgrade skencli", map, listener.getLogger(), workDir);
-		// proc.join();
 	}
 
-    @Symbol("greet")
+    @Symbol("skenai")
     @Extension
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
