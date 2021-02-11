@@ -97,7 +97,7 @@ public class SkenCLIBuilder extends Builder implements SimpleBuildStep {
 	/**
 	 * 
 	 * @param map
-	 *            store env variable key-value
+	 *            store env variable
 	 * @param script
 	 *            arbitrary arguments, the first is script, the next is
 	 *            arguments
