@@ -9,7 +9,7 @@
     </parent>
     <groupId>ai.sken.jenkins.plugins</groupId>
     <artifactId>skenai</artifactId>
-    <version>${revision}${changelist}</version>
+    <version>1.0.6</version>
     <packaging>hpi</packaging>
     <properties>
         <revision>1.0.6</revision>
@@ -43,7 +43,7 @@
         <connection>scm:git:git://github.com/${gitHubRepo}.git</connection>
         <developerConnection>scm:git:git@github.com:${gitHubRepo}.git</developerConnection>
         <url>https://github.com/${gitHubRepo}</url>
-        <tag>${scmTag}</tag>
+        <tag>skenai-1.0.6</tag>
     </scm>
 
     <repositories>
