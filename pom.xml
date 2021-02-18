@@ -18,7 +18,7 @@
         <java.level>8</java.level>
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>    </properties>
     <name>Sken.ai CLI</name>
-    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
+    <url>https://github.com/jenkinsci/skenai-plugin</url>
 
     <dependencyManagement>
         <dependencies>
@@ -58,4 +58,5 @@
             <url>https://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
     </pluginRepositories>
+    <description>Sken.ai offers a DevOps-first Continuous Application Security Scanning. With Sken, your apps on Jenkins will be automatically scanned for security vulnerabilities. Sken is one tool to do all types of scans - SAST, DAST, SCA, Secrets and more, without the need for any AppSec expertise.</description>
 </project>
