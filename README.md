@@ -1,5 +1,6 @@
-# skenai-cli
-## A Jenkins plugin for Sken.ai's CLI tool
+# Sken.ai CLI plugin for Jenkins
+
+A Jenkins plugin for Sken.ai's CLI tool
  
 Sken.ai offers a DevOps-first Continuous Application Security Scanning. With Sken, your apps on Jenkins will be automatically scanned for security vulnerabilities. Sken is one tool to do all types of scans - SAST, DAST, SCA, Secrets and more, without the need for any AppSec expertise.
 
