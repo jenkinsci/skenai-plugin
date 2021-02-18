@@ -13,12 +13,12 @@
     <packaging>hpi</packaging>
     <properties>
         <revision>1.0.8</revision>
-        <changelist>-0210-SNAPSHOT</changelist>
+        <changelist>-SNAPSHOT</changelist>
         <jenkins.version>2.200</jenkins.version>
         <java.level>8</java.level>
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>    </properties>
     <name>Sken.ai CLI</name>
-    <url>https://github.com/jenkinsci/skenai-plugin</url>
+    <url>https://github.com/jenkinsci/skenai-plugin/blob/main/README.md</url>
 
     <dependencyManagement>
         <dependencies>
